@@ -1,0 +1,91 @@
+:root {
+  --bg: #f4f6fb;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --primary: #4f46e5;
+  --primary-dark: #4338ca;
+  --ok: #059669;
+  --danger: #dc2626;
+  --border: #e5e7eb;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+h2 { margin: 0 0 16px; }
+
+.container { max-width: 760px; margin: 0 auto; padding: 24px 16px 48px; }
+
+/* Navbar */
+.navbar {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 12px; padding: 12px 24px; background: var(--card);
+  border-bottom: 1px solid var(--border);
+}
+.brand { font-weight: 700; font-size: 1.2rem; color: var(--primary); text-decoration: none; }
+.nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
+.nav-links a { color: var(--muted); text-decoration: none; font-weight: 500; }
+.nav-links a.active { color: var(--primary); }
+.nav-user { color: var(--muted); font-size: 0.9rem; }
+
+/* Cards & forms */
+.card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 12px; padding: 20px;
+}
+.form { max-width: 440px; margin: 24px auto; display: flex; flex-direction: column; gap: 14px; }
+.form h2 { margin-bottom: 4px; }
+label { display: flex; flex-direction: column; gap: 6px; font-size: 0.9rem; font-weight: 500; flex: 1; }
+input, select {
+  padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px;
+  font-size: 1rem; font-family: inherit; background: #fff;
+}
+input:focus, select:focus { outline: 2px solid var(--primary); border-color: transparent; }
+.row { display: flex; gap: 12px; }
+
+/* Buttons */
+.btn {
+  padding: 10px 18px; border: none; border-radius: 8px; cursor: pointer;
+  background: var(--primary); color: #fff; font-size: 1rem; font-weight: 600;
+}
+.btn:hover { background: var(--primary-dark); }
+.btn.small { padding: 6px 14px; font-size: 0.9rem; }
+.btn.ghost { background: transparent; color: var(--muted); border: 1px solid var(--border); }
+.btn.ghost:hover { background: var(--bg); }
+
+/* Messages */
+.error { color: var(--danger); background: #fef2f2; padding: 10px 12px; border-radius: 8px; margin: 0 0 12px; }
+.success { color: var(--ok); background: #ecfdf5; padding: 10px 12px; border-radius: 8px; margin: 0 0 12px; }
+.hint { color: var(--muted); margin: 4px 0; }
+
+/* Search */
+.search { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; }
+.search input, .search select { flex: 1; min-width: 140px; }
+
+/* Ride list */
+.list { display: flex; flex-direction: column; gap: 14px; }
+.ride .route { display: flex; align-items: center; gap: 10px; font-size: 1.2rem; font-weight: 700; }
+.arrow { color: var(--primary); }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 10px 0; color: var(--muted); font-size: 0.92rem; }
+.posted-by { font-size: 0.85rem; color: var(--muted); margin-bottom: 12px; }
+.badge {
+  display: inline-block; padding: 4px 12px; border-radius: 999px;
+  background: var(--bg); color: var(--muted); font-size: 0.85rem; font-weight: 600;
+}
+.badge.ok { background: #ecfdf5; color: var(--ok); }
+
+/* Contacts (upcoming/history) */
+.contacts { border-top: 1px dashed var(--border); padding-top: 12px; }
+.contact {
+  display: flex; justify-content: space-between; gap: 12px;
+  padding: 8px 0; border-bottom: 1px solid var(--border);
+}
+.contact:last-child { border-bottom: none; }
+.contact a { color: var(--primary); font-weight: 600; text-decoration: none; }
